@@ -136,13 +136,13 @@ cars.forEach(car => {
     let currentDistanceEmergency = ambulance.marker.getLatLng().distanceTo(car.marker.getLatLng());
 
     if (currentDistanceHospital < car.previousDistance && currentDistanceEmergency <= 300 && !car.popupShown) {
-        car.marker.bindPopup(`The marker is within 300 meters of ${car.marker}`);
-        map.openPopup(`The marker is within 300 meters of ${car.marker}`, car.marker.getLatLng(), {autoPan: false});
+        car.marker.bindPopup(`The car is within 300 meters `);
+        map.openPopup(`The car is within 300 meters  `, car.marker.getLatLng(), {autoPan: false});
         car.popupShown = true;
     }
     else if (currentDistanceHospital > car.previousDistance && currentDistanceEmergency <= 300 && !car.popupShown) {
-        car.marker.bindPopup('dont givemarker is within 300 meters of markercar1');
-        map.openPopup('did not recieved alert markercar1', car.marker.getLatLng(), {autoPan: false});
+        car.marker.bindPopup('car is opposite side of emergency vehicle');
+        map.openPopup('car did not recieved alert', car.marker.getLatLng(), {autoPan: false});
         car.popupShown = true;
     }
 
